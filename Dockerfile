@@ -1,12 +1,8 @@
-FROM ubuntu:latest
-LABEL authors="prati"
-
-ENTRYPOINT ["top", "-b"]
-FROM openjdk:21-jdk-slim
+FROM openjdk:17-jdk-slim
 
 WORKDIR /app
 
-COPY target/*.jar app.jar
+COPY task-management-system/target/*.jar app.jar
 
 EXPOSE 8080
 
