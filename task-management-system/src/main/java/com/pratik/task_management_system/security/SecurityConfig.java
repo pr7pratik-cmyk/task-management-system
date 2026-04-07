@@ -25,7 +25,7 @@ public class SecurityConfig {
                         session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 )
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/home").permitAll()
+                        .requestMatchers("/", "/home", "/favicon.ico", "/error").permitAll()
                         .requestMatchers("/auth/**").permitAll()
                         .requestMatchers("/user/**").permitAll() //hasAnyRole("USER", "ADMIN")
                         .requestMatchers("/admin/**").hasRole("ADMIN")
